@@ -710,7 +710,7 @@ const previewMiles = targetMiles;
 >
   <div className="space-y-6">
     <p className="max-w-4xl">
-      Questa pagina tiene insieme due storie: quella dei luoghi già vissuti e quella di quelli che ancora ci chiamano. Le bandierine raccontano la memoria, le tappe numerate il desiderio di continuare a partire.
+      Questa pagina intreccia due storie: i luoghi già vissuti, diventati memoria, e le mete che ancora ci chiamano. Le bandierine raccontano il passato, le tappe numerate danno forma al desiderio, sempre vivo, di continuare a partire.
     </p>
 
     <div className="overflow-hidden rounded-[28px] border border-stone-200 bg-stone-50">
