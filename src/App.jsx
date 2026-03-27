@@ -701,16 +701,8 @@ const previewMiles = targetMiles;
               <p>Ogni regalo diventa un miglio sul planisfero. Il puntino parte simbolicamente da Cagliari e continua il suo racconto tra Honolulu e Ushuaia, così che ogni gesto ricevuto diventi un piccolo movimento verso la tappa successiva.</p>
             </SectionCard>
 
-            <SectionCard icon={CreditCard} title="Miglio dopo miglio">
-              <p>Per chi vorrà accompagnarci con un pensiero, qua potrete lasciare il vostro contributo al viaggio, con la semplicità di un gesto che si trasforma subito in strada, rotta e meraviglia condivisa.</p>
-              <a href={PAYMENT_CARD_URL} className="mt-5 inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-medium text-white transition hover:bg-slate-800">
-                <CreditCard className="h-4 w-4" />
-                Vai al pagamento con carta
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </SectionCard>
-
-            <SectionCard icon={Landmark} title="Indicazioni per gli ospiti">
+            <SectionCard icon={Landmark} title="Miglio dopo miglio">
+		 <p>Per chi vorrà accompagnarci con un pensiero, qua potrete lasciare il vostro contributo al viaggio, con la semplicità di un gesto che si trasforma subito in strada, rotta e meraviglia condivisa.</p>
               <div className="grid gap-3">
                 <div className="rounded-[22px] border border-stone-200 bg-stone-50 p-4">
                   <div className="text-xs uppercase tracking-[0.2em] text-stone-500">Intestatario</div>
@@ -729,10 +721,6 @@ const previewMiles = targetMiles;
                   <div className="mt-2 text-base font-medium text-slate-900">{PAYMENT_NOTE}</div>
                 </div>
               </div>
-              <a href={BANK_TRANSFER_PAGE_URL} className="mt-5 inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-medium text-stone-700 transition hover:bg-stone-50">
-                <Landmark className="h-4 w-4" />
-                Pagina con dettagli bonifico
-              </a>
             </SectionCard>
           </div>
         </section>
