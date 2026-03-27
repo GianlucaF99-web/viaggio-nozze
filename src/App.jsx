@@ -168,12 +168,15 @@ function SoftStat({ label, value, helper }) {
 function SectionCard({ icon: Icon, title, children, className = "" }) {
   return (
     <div className={`rounded-[30px] border border-stone-200 bg-white/88 p-6 shadow-sm shadow-stone-200/60 ${className}`}>
-      <div className="mb-4 flex items-center gap-3">
-        <div className="rounded-full border border-rose-200 bg-rose-50 p-2.5 text-rose-500">
-          <Icon className="h-5 w-5" />
+      <div className="mb-5">
+        <div className="inline-flex items-center gap-2 border border-stone-400 bg-transparent px-4 py-2">
+          <Icon className="h-4 w-4 text-stone-700" />
+          <h3 className="font-serif text-[12px] font-normal uppercase tracking-[0.28em] text-stone-700">
+            {title}
+          </h3>
         </div>
-        <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
       </div>
+
       <div className="text-sm leading-7 text-stone-700">{children}</div>
     </div>
   );
@@ -556,11 +559,12 @@ const previewMiles = targetMiles;
           <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 lg:px-8">
             <div className="mb-6 flex flex-col gap-3 px-1 lg:flex-row lg:items-end lg:justify-between">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-3 py-1.5 text-xs uppercase tracking-[0.2em] text-amber-700">
-                  <Globe className="h-4 w-4" />
-                  The Wedding Post · La spedizione
-                </div>
-                <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl lg:text-5xl">La nostra spedizione</h2>
+             <div className="inline-flex items-center gap-2 border border-stone-400 bg-transparent px-4 py-2">
+  <Globe className="h-4 w-4 text-stone-700" />
+  <span className="font-serif text-[12px] font-normal uppercase tracking-[0.28em] text-stone-700">
+    La spedizione
+  </span>
+</div>
                 <p className="mt-2 max-w-4xl text-sm leading-7 text-stone-600 sm:text-base">
                    Il nostro racconto prende forma un miglio alla volta. L'aeroplano parte simbolicamente dalla Sardegna e continua il suo viaggio in giro per le meraviglie del mondo attraversando i fordi norvegesi, sorvolando il medio oriente, per poi andare alla scoperta dell'asia fino ad arrivare ad accarezzare i kangaroos australiani. Ora meritato relax alle Hawaii per poi raggiungere la porta d'accesso all'antardide: Ushuaia.
                 </p>
