@@ -606,6 +606,7 @@ const previewMiles = targetMiles;
     </p>
   </div>
 </div>
+            </div>
 
             <div className="grid gap-6">
               <WorldMap
