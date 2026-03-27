@@ -538,7 +538,7 @@ const previewMiles = targetMiles;
               Cronaca rosa · Edizione speciale
             </div>
             <h1 className="mt-6 font-serif text-4xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-              Il nostro <span className="text-stone-900 italic">giornale di viaggio</span> parte da Cagliari e riprende da Honolulu verso Ushuaia.
+              Il nostro <span className="text-stone-900 italic">giornale di viaggio</span> parte dalle coste occidentali della Sardegna, riprende dalle Hawaii verso l'estremo sud del mondo nella Terra del Fuoco.
             </h1>
             <p className="mx-auto mt-6 max-w-3xl font-serif text-lg leading-8 text-stone-700">
               Come in un piccolo giornale di viaggio, questa pagina raccoglie i luoghi già vissuti, le tappe che ci attendono e i gesti d'affetto che, miglio dopo miglio, accompagneranno il nostro cammino insieme.
