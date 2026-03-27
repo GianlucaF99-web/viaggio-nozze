@@ -608,7 +608,7 @@ const previewMiles = targetMiles;
         </div>
 
         <input
-          className="mt-6 w-full accent-rose-500"
+          className="mt-6 w-full accent-slate-800"
           type="range"
           min="25"
           max="1000"
@@ -628,11 +628,11 @@ const previewMiles = targetMiles;
                 setDonationAmount(amount);
                 setAnimateGift(false);
               }}
-              className={`rounded-full border px-4 py-2 text-sm transition ${
-                donationAmount === amount
-                  ? "border-rose-300 bg-rose-100 text-rose-800"
-                  : "border-stone-200 bg-white text-stone-700 hover:bg-stone-50"
-              }`}
+             className={`rounded-full border px-4 py-2 text-sm transition ${
+  donationAmount === amount
+    ? "border-slate-800 bg-slate-800 text-white"
+    : "border-stone-300 bg-white text-stone-700 hover:bg-stone-50"
+}`}
             >
               {formatEuro(amount)}
             </button>
@@ -643,13 +643,13 @@ const previewMiles = targetMiles;
       <div className="mt-5 flex flex-wrap gap-3">
         <button
           onClick={() => setAnimateGift(true)}
-          className="rounded-full border border-rose-300 bg-rose-500 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-rose-600"
+          className="rounded-full border border-slate-800 bg-slate-800 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-slate-700"
         >
           Anteprima del movimento
         </button>
         <button
           onClick={() => setAnimateGift(false)}
-          className="rounded-full border border-stone-200 bg-white px-5 py-2.5 text-sm font-medium text-stone-700 transition hover:bg-stone-50"
+          className="rounded-full border border-stone-300 bg-white px-5 py-2.5 text-sm font-medium text-stone-700 transition hover:bg-stone-50"
         >
           Reset
         </button>
