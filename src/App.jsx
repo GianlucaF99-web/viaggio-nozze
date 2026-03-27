@@ -696,6 +696,10 @@ const previewMiles = targetMiles;
             ) : (
               <span> Ci avviciniamo ancora di più a <strong>{nextTarget?.name}</strong>.</span>
             )}
+  </p>
+<p className="mt-2 font-serif text-stone-700">
+  Guarda sopra, nel planisfero, come la rotta si allunga un miglio alla volta.
+</p>
           </motion.div>
         ) : null}
       </AnimatePresence>
