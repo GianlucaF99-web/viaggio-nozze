@@ -583,7 +583,7 @@ const previewMiles = targetMiles;
 		baseMiles={hiddenBaseMiles}
 		isSimulating={animateGift}
               />
-
+	</div>
         </section>
 
         <section className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
