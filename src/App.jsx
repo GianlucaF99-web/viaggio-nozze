@@ -586,104 +586,136 @@ const previewMiles = targetMiles;
 	</div>
  </div>
 </section>
+<section className="grid gap-6">
+  <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+    <SectionCard icon={Gift} title="Potrete farlo qui">
+      <p>
+        Ogni regalo aggiunge un tratto al nostro cammino. Il puntino avanza sul planisfero e il viaggio continua, come una storia che si scrive poco alla volta. Fai una simulazione di dove potremo arrivare con il tuo contributo!
+      </p>
 
-        <section className="grid gap-6">
-          <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-            <SectionCard icon={Gift} title="Potrete farlo qui">
-              <p>Ogni regalo aggiunge un tratto al nostro cammino. Il puntino avanza sul planisfero e il viaggio continua, come una storia che si scrive poco alla volta. Fai una simulazione di dove potremo arrivare con il tuo contributo!</p>
-              <div className="mt-6 rounded-[28px] border border-stone-200 bg-stone-50/80 p-5">
-                <div className="text-sm text-stone-500">Importo selezionato</div>
-                <div className="mt-2 text-4xl font-semibold text-slate-900">{formatEuro(donationAmount)}</div>
-                <div className="mt-2 text-sm text-emerald-700">{formatMiles(donationAmount)} miglia aggiunte dal tuo regalo</div>
-                <input
-                  className="mt-6 w-full accent-rose-500"
-                  type="range"
-                  min="25"
-                  max="1000"
-                  step="25"
-                  value={donationAmount}
-                  onChange={(e) => {
-                    setDonationAmount(Number(e.target.value));
-                    setAnimateGift(false);
-                  }}
-                />
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {[50, 100, 150, 250, 500].map((amount) => (
-                    <button
-                      key={amount}
-                      onClick={() => {
-                        setDonationAmount(amount);
-                        setAnimateGift(false);
-                      }}
-                      className={`rounded-full border px-4 py-2 text-sm transition ${donationAmount === amount ? "border-rose-300 bg-rose-100 text-rose-800" : "border-stone-200 bg-white text-stone-700 hover:bg-stone-50"}`}
-                    >
-                      {formatEuro(amount)}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              <div className="mt-5 flex flex-wrap gap-3">
-                <button onClick={() => setAnimateGift(true)} className="rounded-full border border-rose-300 bg-rose-500 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-rose-600">
-                  Anteprima del movimento
-                </button>
-                <button onClick={() => setAnimateGift(false)} className="rounded-full border border-stone-200 bg-white px-5 py-2.5 text-sm font-medium text-stone-700 transition hover:bg-stone-50">
-                  Reset
-                </button>
-              </div>
-              <AnimatePresence>
-                {animateGift ? (
-                  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} className="mt-5 rounded-[24px] border border-emerald-200 bg-emerald-50 p-4 text-sm leading-6 text-emerald-900">
-                    Con questo regalo il puntino avanza di <strong>{formatMiles(donationAmount)} miglia</strong>.
-                    {nextTargetAfterGift?.name !== nextTarget?.name ? (
-                      <span> Nuova tappa raggiunta: <strong>{nextTargetAfterGift?.name}</strong>.</span>
-                    ) : (
-                      <span> Ci avviciniamo ancora di più a <strong>{nextTarget?.name}</strong>.</span>
-                    )}
-                  </motion.div>
-                ) : null}
-              </AnimatePresence>
-            </SectionCard>
+      <div className="mt-6 rounded-[28px] border border-stone-200 bg-stone-50/80 p-5">
+        <div className="text-sm text-stone-500">Importo selezionato</div>
+        <div className="mt-2 text-4xl font-semibold text-slate-900">{formatEuro(donationAmount)}</div>
+        <div className="mt-2 text-sm text-emerald-700">
+          {formatMiles(donationAmount)} miglia aggiunte dal tuo regalo
+        </div>
 
-            <SectionCard icon={Compass} title="La testimonianza" className="bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(250,247,242,0.95))]">
-<div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <input
+          className="mt-6 w-full accent-rose-500"
+          type="range"
+          min="25"
+          max="1000"
+          step="25"
+          value={donationAmount}
+          onChange={(e) => {
+            setDonationAmount(Number(e.target.value));
+            setAnimateGift(false);
+          }}
+        />
+
+        <div className="mt-4 flex flex-wrap gap-2">
+          {[50, 100, 150, 250, 500].map((amount) => (
+            <button
+              key={amount}
+              onClick={() => {
+                setDonationAmount(amount);
+                setAnimateGift(false);
+              }}
+              className={`rounded-full border px-4 py-2 text-sm transition ${
+                donationAmount === amount
+                  ? "border-rose-300 bg-rose-100 text-rose-800"
+                  : "border-stone-200 bg-white text-stone-700 hover:bg-stone-50"
+              }`}
+            >
+              {formatEuro(amount)}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-5 flex flex-wrap gap-3">
+        <button
+          onClick={() => setAnimateGift(true)}
+          className="rounded-full border border-rose-300 bg-rose-500 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-rose-600"
+        >
+          Anteprima del movimento
+        </button>
+        <button
+          onClick={() => setAnimateGift(false)}
+          className="rounded-full border border-stone-200 bg-white px-5 py-2.5 text-sm font-medium text-stone-700 transition hover:bg-stone-50"
+        >
+          Reset
+        </button>
+      </div>
+
+      <AnimatePresence>
+        {animateGift ? (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            className="mt-5 rounded-[24px] border border-emerald-200 bg-emerald-50 p-4 text-sm leading-6 text-emerald-900"
+          >
+            Con questo regalo il puntino avanza di <strong>{formatMiles(donationAmount)} miglia</strong>.
+            {nextTargetAfterGift?.name !== nextTarget?.name ? (
+              <span> Nuova tappa raggiunta: <strong>{nextTargetAfterGift?.name}</strong>.</span>
+            ) : (
+              <span> Ci avviciniamo ancora di più a <strong>{nextTarget?.name}</strong>.</span>
+            )}
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+    </SectionCard>
+
+    <SectionCard icon={Landmark} title="Miglio dopo miglio">
+      <p>
+        Per chi vorrà accompagnarci con un pensiero, qua potrete lasciare il vostro contributo al viaggio, con la semplicità di un gesto che si trasforma subito in strada, rotta e meraviglia condivisa.
+      </p>
+
+      <div className="grid gap-3">
+        <div className="rounded-[22px] border border-stone-200 bg-stone-50 p-4">
+          <div className="text-xs uppercase tracking-[0.2em] text-stone-500">Intestatario</div>
+          <div className="mt-2 text-base font-medium text-slate-900">{ACCOUNT_HOLDER}</div>
+        </div>
+
+        <div className="rounded-[22px] border border-stone-200 bg-stone-50 p-4">
+          <div className="text-xs uppercase tracking-[0.2em] text-stone-500">IBAN</div>
+          <div className="mt-2 break-all text-base font-medium text-slate-900">{IBAN}</div>
+        </div>
+
+        <div className="rounded-[22px] border border-stone-200 bg-stone-50 p-4">
+          <div className="text-xs uppercase tracking-[0.2em] text-stone-500">BIC / SWIFT</div>
+          <div className="mt-2 text-base font-medium text-slate-900">{BIC}</div>
+        </div>
+
+        <div className="rounded-[22px] border border-stone-200 bg-stone-50 p-4">
+          <div className="text-xs uppercase tracking-[0.2em] text-stone-500">Causale</div>
+          <div className="mt-2 text-base font-medium text-slate-900">{PAYMENT_NOTE}</div>
+        </div>
+      </div>
+    </SectionCard>
+  </div>
+
+  <SectionCard
+    icon={Compass}
+    title="La testimonianza"
+    className="bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(250,247,242,0.95))]"
+  >
+    <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
       <div>
-              <p>Questa pagina tiene insieme due storie: quella dei luoghi già vissuti e quella di quelli che ancora ci chiamano. Le bandierine raccontano la memoria, le tappe numerate il desiderio di continuare a partire.</p>
-    <div className="overflow-hidden rounded-[28px] border border-stone-200 bg-stone-50">
-      <img
-        src="/foto-testimonianza.png"
-        alt="Simone e Veronica in un momento romantico del matrimonio"
-        className="h-full w-full object-cover"
-      />
-    </div>
-            </SectionCard>
-          </div>
+        <p>
+          Questa pagina tiene insieme due storie: quella dei luoghi già vissuti e quella di quelli che ancora ci chiamano. Le bandierine raccontano la memoria, le tappe numerate il desiderio di continuare a partire.
+        </p>
+      </div>
 
-          <div className="grid gap-6">
-
-            <SectionCard icon={Landmark} title="Miglio dopo miglio">
-		 <p>Per chi vorrà accompagnarci con un pensiero, qua potrete lasciare il vostro contributo al viaggio, con la semplicità di un gesto che si trasforma subito in strada, rotta e meraviglia condivisa.</p>
-              <div className="grid gap-3">
-                <div className="rounded-[22px] border border-stone-200 bg-stone-50 p-4">
-                  <div className="text-xs uppercase tracking-[0.2em] text-stone-500">Intestatario</div>
-                  <div className="mt-2 text-base font-medium text-slate-900">{ACCOUNT_HOLDER}</div>
-                </div>
-                <div className="rounded-[22px] border border-stone-200 bg-stone-50 p-4">
-                  <div className="text-xs uppercase tracking-[0.2em] text-stone-500">IBAN</div>
-                  <div className="mt-2 break-all text-base font-medium text-slate-900">{IBAN}</div>
-                </div>
-                <div className="rounded-[22px] border border-stone-200 bg-stone-50 p-4">
-                  <div className="text-xs uppercase tracking-[0.2em] text-stone-500">BIC / SWIFT</div>
-                  <div className="mt-2 text-base font-medium text-slate-900">{BIC}</div>
-                </div>
-                <div className="rounded-[22px] border border-stone-200 bg-stone-50 p-4">
-                  <div className="text-xs uppercase tracking-[0.2em] text-stone-500">Causale</div>
-                  <div className="mt-2 text-base font-medium text-slate-900">{PAYMENT_NOTE}</div>
-                </div>
-              </div>
-            </SectionCard>
-          </div>
-        </section>
+      <div className="overflow-hidden rounded-[28px] border border-stone-200 bg-stone-50">
+        <img
+          src="/foto-testimonianza.png"
+          alt="Simone e Veronica in un momento romantico del matrimonio"
+          className="h-full w-full object-cover"
+        />
       </div>
     </div>
-  );
-}
+  </SectionCard>
+</section>
+        
