@@ -699,7 +699,7 @@ const previewMiles = targetMiles;
             )}
   </p>
 
-<p className="mt-2 font-serif text-stone-700">
+<p className="mt-2 text-emerald-800">
   Guarda sopra, nel planisfero, come la rotta si allunga un miglio alla volta.
 </p>
           </motion.div>
