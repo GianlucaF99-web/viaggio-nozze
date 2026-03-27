@@ -18,10 +18,10 @@ import { ComposableMap, Geographies, Geography, Marker, Line, Sphere } from "@vn
 
 const PAYMENT_CARD_URL = "https://example.com/paga-con-carta";
 const BANK_TRANSFER_PAGE_URL = "https://example.com/bonifico";
-const IBAN = "IT00 X000 0000 0000 0000 0000 000";
-const BIC = "ABCDEFGHXXX";
+const IBAN = "IT25 O030 6917 4111 0000 0010 968";
+const BIC = "BCITITMMXXX";
 const ACCOUNT_HOLDER = "Simone Antonio Floris";
-const PAYMENT_NOTE = "Regalo di nozze - viaggio";
+const PAYMENT_NOTE = "Regalo di nozze";
 const GEO_URL = typeof window !== "undefined"
   ? new URL("/countries-110m.json", window.location.origin).toString()
   : "/countries-110m.json";
