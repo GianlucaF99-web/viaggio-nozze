@@ -690,6 +690,7 @@ const previewMiles = targetMiles;
             exit={{ opacity: 0, y: 10 }}
             className="mt-5 rounded-[24px] border border-emerald-200 bg-emerald-50 p-4 text-sm leading-6 text-emerald-900"
           >
+<p>
             Con questo regalo il puntino avanza di <strong>{formatMiles(donationAmount)} miglia</strong>.
             {nextTargetAfterGift?.name !== nextTarget?.name ? (
               <span> Nuova tappa raggiunta: <strong>{nextTargetAfterGift?.name}</strong>.</span>
@@ -697,6 +698,7 @@ const previewMiles = targetMiles;
               <span> Ci avviciniamo ancora di più a <strong>{nextTarget?.name}</strong>.</span>
             )}
   </p>
+
 <p className="mt-2 font-serif text-stone-700">
   Guarda sopra, nel planisfero, come la rotta si allunga un miglio alla volta.
 </p>
