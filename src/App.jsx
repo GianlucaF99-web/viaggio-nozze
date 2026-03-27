@@ -572,14 +572,40 @@ const previewMiles = targetMiles;
                    Il nostro racconto prende forma un miglio alla volta. L'aeroplano parte simbolicamente dalla Sardegna e continua il suo viaggio in giro per le meraviglie del mondo attraversando i fordi norvegesi, sorvolando il medio oriente, per poi andare alla scoperta dell'asia fino ad arrivare ad accarezzare i kangaroos australiani. Ora meritato relax alle Hawaii per poi raggiungere la porta d'accesso all'antardide: Ushuaia.
                 </p>
               </div>
-              <div className="rounded-[4px] border border-stone-400 bg-[#f7f3ed] px-5 py-4 text-sm leading-6 text-stone-800 lg:max-w-md">
-                <div className="flex items-center gap-2 font-semibold">
-                  <Stars className="h-4 w-4" />
-                  Edizione straordinaria
-                </div>
-                <div className="mt-1 text-rose-800/80">ATTENZIONE. Questa è l'ultima chiamata per il volo S&V260626 diretto a USHUAIA, in partenza dal gate numero 1. Si pregano i passeggeri Nanni Veronica e Floris Simone di recarsi immediatamente all'imbarco.</div>
-              </div>
-            </div>
+              <div className="lg:max-w-md border-2 border-stone-700 bg-[#f7f3ed] px-5 py-4 text-stone-800">
+  <div className="border-b border-stone-400 pb-3">
+    <div className="flex items-center gap-2 font-serif text-[11px] uppercase tracking-[0.28em] text-stone-600">
+      <Stars className="h-4 w-4 text-stone-700" />
+      Edizione straordinaria
+    </div>
+
+    <div className="mt-2 font-serif text-2xl uppercase tracking-[0.06em] text-slate-900">
+      Ultima chiamata al gate
+    </div>
+  </div>
+
+  <div className="mt-4 space-y-2 text-[15px] leading-7 text-stone-700">
+    <p>
+      <span className="font-semibold uppercase tracking-[0.08em] text-slate-900">
+        Volo S&amp;V260626
+      </span>{" "}
+      diretto a{" "}
+      <span className="font-semibold uppercase tracking-[0.08em] text-slate-900">
+        Ushuaia
+      </span>.
+    </p>
+
+    <p>Imbarco previsto al gate numero 1.</p>
+
+    <p>
+      Si pregano i passeggeri{" "}
+      <span className="font-semibold text-slate-900">
+        Nanni Veronica e Floris Simone
+      </span>{" "}
+      di recarsi immediatamente all'imbarco.
+    </p>
+  </div>
+</div>
 
             <div className="grid gap-6">
               <WorldMap
