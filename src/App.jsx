@@ -562,9 +562,12 @@ const previewMiles = targetMiles;
              <div className="inline-flex items-center gap-2 border border-stone-400 bg-transparent px-4 py-2">
   <Globe className="h-4 w-4 text-stone-700" />
   <span className="font-serif text-[12px] font-normal uppercase tracking-[0.28em] text-stone-700">
-    La spedizione
+    The Wedding Post · La spedizione
   </span>
 </div>
+<h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl lg:text-5xl">
+  La nostra spedizione
+</h2>
                 <p className="mt-2 max-w-4xl text-sm leading-7 text-stone-600 sm:text-base">
                    Il nostro racconto prende forma un miglio alla volta. L'aeroplano parte simbolicamente dalla Sardegna e continua il suo viaggio in giro per le meraviglie del mondo attraversando i fordi norvegesi, sorvolando il medio oriente, per poi andare alla scoperta dell'asia fino ad arrivare ad accarezzare i kangaroos australiani. Ora meritato relax alle Hawaii per poi raggiungere la porta d'accesso all'antardide: Ushuaia.
                 </p>
