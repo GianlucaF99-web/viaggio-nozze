@@ -717,3 +717,8 @@ const previewMiles = targetMiles;
       </div>
     </div>
   </SectionCard>
+</section>
+      </div>
+    </div>
+  );
+}
