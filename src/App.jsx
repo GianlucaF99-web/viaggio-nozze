@@ -28,6 +28,7 @@ const GEO_URL = typeof window !== "undefined"
 
 const START = { name: "Cagliari", lat: 39.2238, lon: 9.1217, flag: "🇮🇹" };
 const START_PROGRESS_STAGE_NUMBER = 16;
+const VISUAL_PREVIEW_MULTIPLIER = 8;
 
 const VISITED_PLACES = [
   { name: "Amsterdam", lat: 52.3676, lon: 4.9041 },
@@ -323,7 +324,14 @@ function StartMarker() {
 function WorldMap({ routeMeta, visibleMiles, previewMiles, progressStartStage, baseMiles, isSimulating}) {
   const currentPosition = getPositionOnRoute(routeMeta, visibleMiles);
   const previewPosition = getPositionOnRoute(routeMeta, previewMiles);
-const basePosition = getPositionOnRoute(routeMeta, baseMiles);	
+const basePosition = getPositionOnRoute(routeMeta, baseMiles);
+const currentAngle = currentPosition.segment
+  ? Math.atan2(
+      currentPosition.segment.to.lat - currentPosition.segment.from.lat,
+      currentPosition.segment.to.lon - currentPosition.segment.from.lon
+    ) *
+    (180 / Math.PI)
+  : 0;	
   const target = getCurrentTarget(routeMeta, visibleMiles);
   const completedStops = getCompletedStops(routeMeta, visibleMiles);
   const allSegments = routeMeta.segments;
@@ -419,38 +427,40 @@ const activeTraversedSegment = currentPosition.segment || null;
           })}
 
           {previewMiles > visibleMiles ? (
-            <Marker coordinates={[previewPosition.lon, previewPosition.lat]}>
-              <g>
-                <circle r="18" fill="rgba(250,204,21,0.24)" />
-                <circle r="5.8" fill="#fbbf24" />
-              </g>
-            </Marker>
-          ) : null}
+  <Marker coordinates={[previewPosition.lon, previewPosition.lat]}>
+    <g>
+      <circle r="16" fill="rgba(17,24,39,0.08)" />
+      <circle r="4.8" fill="#6b7280" />
+    </g>
+  </Marker>
+) : null}
 {isSimulating ? (
   <>
     <Line
       from={[basePosition.lon, basePosition.lat]}
       to={[currentPosition.lon, currentPosition.lat]}
-      stroke="#f59e0b"
-      strokeWidth={5}
+      stroke="#111827"
+      strokeWidth={7}
       strokeLinecap="round"
-      opacity={0.95}
+      opacity={0.9}
     />
     <Marker coordinates={[basePosition.lon, basePosition.lat]}>
       <g>
-        <circle r="18" fill="rgba(245,158,11,0.18)" />
-        <circle r="6" fill="#f59e0b" />
+        <circle r="22" fill="rgba(17,24,39,0.12)" />
+        <circle r="7" fill="#111827" />
       </g>
     </Marker>
   </>
 ) : null}
-         <Marker coordinates={[currentPosition.lon, currentPosition.lat]}>
+    <Marker coordinates={[currentPosition.lon, currentPosition.lat]}>
   <g>
     <circle
-      r={isSimulating ? 26 : 19}
-      fill={isSimulating ? "rgba(244,114,182,0.30)" : "rgba(244,114,182,0.22)"}
+      r={isSimulating ? 28 : 18}
+      fill={isSimulating ? "rgba(17,24,39,0.16)" : "rgba(17,24,39,0.10)"}
     />
-    <circle r={isSimulating ? 9 : 7.2} fill="#f472b6" />
+    <g transform={`translate(-14,-14) rotate(${currentAngle},14,14)`}>
+      <Plane size={28} color="#111827" strokeWidth={2.2} />
+    </g>
   </g>
 </Marker>
         </ComposableMap>
@@ -492,7 +502,12 @@ export default function LandingViaggioNozze() {
   }, [query]);
 
 const hiddenBaseMiles = routeMeta.segments[START_PROGRESS_STAGE_NUMBER - 1]?.endMiles || 0;
-const targetMiles = hiddenBaseMiles + donationAmount;
+
+const actualTargetMiles = hiddenBaseMiles + donationAmount;
+const visualTargetMiles = Math.min(
+  routeMeta.totalMiles,
+  hiddenBaseMiles + donationAmount * VISUAL_PREVIEW_MULTIPLIER
+);
 
 const [displayMiles, setDisplayMiles] = useState(hiddenBaseMiles);
 
@@ -503,29 +518,27 @@ useEffect(() => {
   }
 
   const from = hiddenBaseMiles;
-  const to = targetMiles;
-  const duration = 1800;
+  const to = visualTargetMiles;
+  const duration = 2200;
   let frameId;
   const start = performance.now();
 
   const tick = (now) => {
     const t = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+    const eased = 1 - Math.pow(1 - t, 3);
     setDisplayMiles(from + (to - from) * eased);
 
-    if (t < 1) {
-      frameId = requestAnimationFrame(tick);
-    }
+    if (t < 1) frameId = requestAnimationFrame(tick);
   };
 
   frameId = requestAnimationFrame(tick);
   return () => cancelAnimationFrame(frameId);
-}, [animateGift, hiddenBaseMiles, targetMiles]);
+}, [animateGift, hiddenBaseMiles, visualTargetMiles]);
 
 const visibleMiles = displayMiles;
-const previewMiles = targetMiles;
-  const nextTarget = getCurrentTarget(routeMeta, hiddenBaseMiles);
-  const nextTargetAfterGift = getCurrentTarget(routeMeta, hiddenBaseMiles + donationAmount);
+const previewMiles = visualTargetMiles;
+const nextTarget = getCurrentTarget(routeMeta, hiddenBaseMiles);
+const nextTargetAfterGift = getCurrentTarget(routeMeta, visualTargetMiles);
 
   return (
     <div className="min-h-screen bg-[#ebe5dc] text-slate-900">
@@ -698,7 +711,7 @@ const previewMiles = targetMiles;
               <span> Ci avviciniamo ancora di più a <strong>{nextTarget?.name}</strong>.</span>
             )}
   </p>
-
+\
 <p className="mt-2 text-emerald-800">
   Guarda sopra, nel planisfero, come la rotta si allunga un miglio alla volta.
 </p>
