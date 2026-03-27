@@ -574,7 +574,7 @@ const previewMiles = targetMiles;
               </div>
             </div>
 
-            <div className="grid gap-6 xl:grid-cols-[minmax(0,1.68fr)_390px] xl:items-start">
+            <div className="grid gap-6">
               <WorldMap
                 routeMeta={routeMeta}
                 visibleMiles={visibleMiles}
@@ -584,54 +584,6 @@ const previewMiles = targetMiles;
 		isSimulating={animateGift}
               />
 
-              <div className="rounded-[6px] border border-stone-400 bg-[#f7f3ed] p-5 shadow-none lg:p-6 xl:sticky xl:top-6">
-                <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-stone-500">
-                  <Compass className="h-4 w-4 text-rose-500" />
-                  Rubrica speciale
-                </div>
-                <p className="mt-3 text-sm leading-7 text-stone-600">
-                  Ecco la lista dei luoghi già visitati dagli sposi con le bandierine, la tappe che ad oggi potranno visitare grazie alle miglia conquistat e poi le prossime tappe della spedizione con numero e bandiera.
-                </p>
-
-                <div className="mt-6 space-y-6 max-h-[78vh] overflow-auto pr-1">
-                  <div>
-                    <div className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-stone-500">
-                      <Flag className="h-4 w-4 text-emerald-600" />
-                      Cronaca rosa
-                    </div>
-                    <div className="space-y-2">
-                      {VISITED_PLACES.map((place) => (
-                        <VisitedPlaceItem key={place.name} name={place.name} />
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-stone-500">
-                      <MapPinned className="h-4 w-4 text-rose-500" />
-                      La spedizione
-                    </div>
-                    <div className="space-y-2">
-                      {DESTINATION_CAPITALS.map((city, index) => {
-                        const stage = index + 1;
-                        const reached = stage <= getCompletedStops(routeMeta, hiddenBaseMiles);
-                        return (
-                          <DestinationLegendItem
-                            key={city.name}
-                            stage={stage}
-                            name={city.name}
-                            flag={city.flag}
-                            active={city.name === nextTarget?.name}
-                            reached={reached}
-                          />
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
 
         <section className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
