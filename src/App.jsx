@@ -696,27 +696,25 @@ const previewMiles = targetMiles;
     </SectionCard>
   </div>
 
-  <SectionCard
-    icon={Compass}
-    title="La testimonianza"
-    className="bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(250,247,242,0.95))]"
-  >
-    <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-      <div>
-        <p>
-          Questa pagina tiene insieme due storie: quella dei luoghi già vissuti e quella di quelli che ancora ci chiamano. Le bandierine raccontano la memoria, le tappe numerate il desiderio di continuare a partire.
-        </p>
-      </div>
+<SectionCard
+  icon={Compass}
+  title="La testimonianza"
+  className="bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(250,247,242,0.95))]"
+>
+  <div className="space-y-6">
+    <p className="max-w-4xl">
+      Questa pagina tiene insieme due storie: quella dei luoghi già vissuti e quella di quelli che ancora ci chiamano. Le bandierine raccontano la memoria, le tappe numerate il desiderio di continuare a partire.
+    </p>
 
-      <div className="overflow-hidden rounded-[28px] border border-stone-200 bg-stone-50">
-        <img
-          src="/foto-testimonianza.png"
-          alt="Simone e Veronica in un momento romantico del matrimonio"
-          className="h-full w-full object-cover"
-        />
-      </div>
+    <div className="overflow-hidden rounded-[28px] border border-stone-200 bg-stone-50">
+      <img
+        src="/foto-testimonianza.png"
+        alt="Simone e Veronica in un momento romantico del matrimonio"
+        className="h-[520px] w-full object-cover object-center"
+      />
     </div>
-  </SectionCard>
+  </div>
+</SectionCard>
 </section>
       </div>
     </div>
