@@ -562,7 +562,7 @@ const previewMiles = targetMiles;
                 </div>
                 <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl lg:text-5xl">La nostra spedizione</h2>
                 <p className="mt-2 max-w-4xl text-sm leading-7 text-stone-600 sm:text-base">
-                   Al centro c'è il planisfero, ma intorno prende forma il nostro racconto: i luoghi già vissuti, quelli che ancora ci aspettano e il cammino che, passo dopo passo, continueremo a scrivere insieme.
+                   Il nostro racconto prende forma un miglio alla volta. L'aeroplano parte simbolicamente dalla Sardegna e continua il suo viaggio in giro per le meraviglie del mondo attraversando i fordi norvegesi, sorvolando il medio oriente, per poi andare alla scoperta dell'asia fino ad arrivare ad accarezzare i kangaroos australiani. Ora meritato relax alle Hawaii per poi raggiungere la porta d'accesso all'antardide: Ushuaia.
                 </p>
               </div>
               <div className="rounded-[4px] border border-stone-400 bg-[#f7f3ed] px-5 py-4 text-sm leading-6 text-stone-800 lg:max-w-md">
@@ -570,7 +570,7 @@ const previewMiles = targetMiles;
                   <Stars className="h-4 w-4" />
                   Edizione straordinaria
                 </div>
-                <div className="mt-1 text-rose-800/80">ATTENZIONE. Questa è l'ultima chiamata per il volo S&V260626 duratto a USHUAIA, in partenza dal gate numero 1. Si pregano i passeggeri Nanni Veronica e Floris Simone di recarsi immediatamente all'imbarco.</div>
+                <div className="mt-1 text-rose-800/80">ATTENZIONE. Questa è l'ultima chiamata per il volo S&V260626 diretto a USHUAIA, in partenza dal gate numero 1. Si pregano i passeggeri Nanni Veronica e Floris Simone di recarsi immediatamente all'imbarco.</div>
               </div>
             </div>
 
