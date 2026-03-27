@@ -587,8 +587,8 @@ const previewMiles = targetMiles;
  </div>
 </section>
 
-        <section className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="grid gap-6">
+        <section className="grid gap-6">
+          <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
             <SectionCard icon={Gift} title="Potrete farlo qui">
               <p>Ogni regalo aggiunge un tratto al nostro cammino. Il puntino avanza sul planisfero e il viaggio continua, come una storia che si scrive poco alla volta. Fai una simulazione di dove potremo arrivare con il tuo contributo!</p>
               <div className="mt-6 rounded-[28px] border border-stone-200 bg-stone-50/80 p-5">
@@ -645,6 +645,8 @@ const previewMiles = targetMiles;
             </SectionCard>
 
             <SectionCard icon={Compass} title="La testimonianza" className="bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(250,247,242,0.95))]">
+<div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <div>
               <p>Questa pagina tiene insieme due storie: quella dei luoghi già vissuti e quella di quelli che ancora ci chiamano. Le bandierine raccontano la memoria, le tappe numerate il desiderio di continuare a partire.</p>
     <div className="overflow-hidden rounded-[28px] border border-stone-200 bg-stone-50">
       <img
