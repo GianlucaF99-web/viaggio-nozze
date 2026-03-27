@@ -646,6 +646,13 @@ const previewMiles = targetMiles;
 
             <SectionCard icon={Compass} title="La testimonianza" className="bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(250,247,242,0.95))]">
               <p>Questa pagina tiene insieme due storie: quella dei luoghi già vissuti e quella di quelli che ancora ci chiamano. Le bandierine raccontano la memoria, le tappe numerate il desiderio di continuare a partire.</p>
+    <div className="overflow-hidden rounded-[28px] border border-stone-200 bg-stone-50">
+      <img
+        src="/foto-testimonianza.png"
+        alt="Simone e Veronica in un momento romantico del matrimonio"
+        className="h-full w-full object-cover"
+      />
+    </div>
             </SectionCard>
           </div>
 
