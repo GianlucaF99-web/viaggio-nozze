@@ -650,9 +650,6 @@ const previewMiles = targetMiles;
           </div>
 
           <div className="grid gap-6">
-            <SectionCard icon={Plane} title="L'annuncio">
-              <p>Ogni regalo diventa un miglio sul planisfero. Il puntino parte simbolicamente da Cagliari e continua il suo racconto tra Honolulu e Ushuaia, così che ogni gesto ricevuto diventi un piccolo movimento verso la tappa successiva.</p>
-            </SectionCard>
 
             <SectionCard icon={Landmark} title="Miglio dopo miglio">
 		 <p>Per chi vorrà accompagnarci con un pensiero, qua potrete lasciare il vostro contributo al viaggio, con la semplicità di un gesto che si trasforma subito in strada, rotta e meraviglia condivisa.</p>
