@@ -469,19 +469,19 @@ const activeTraversedSegment = currentPosition.segment || null;
       <div className="absolute bottom-5 left-5 right-5 z-20 hidden gap-3 lg:grid lg:grid-cols-4">
         <div className="rounded-[22px] border border-white/12 bg-slate-900/35 px-4 py-3 text-sm text-white/92 backdrop-blur">
           <div className="text-[11px] uppercase tracking-[0.2em] text-white/60">Partenza</div>
-          <div className="mt-1 font-medium">Cagliari</div>
+          <div className="mt-1 font-medium">Sardegna</div>
         </div>
         <div className="rounded-[22px] border border-white/12 bg-slate-900/35 px-4 py-3 text-sm text-white/92 backdrop-blur">
-          <div className="text-[11px] uppercase tracking-[0.2em] text-white/60">Tratto attivo</div>
+          <div className="text-[11px] uppercase tracking-[0.2em] text-white/60">Prossima Rotta</div>
           <div className="mt-1 font-medium">Dalla tappa 16 Honolulu alla tappa 17 Ushuaia</div>
         </div>
         <div className="rounded-[22px] border border-white/12 bg-slate-900/35 px-4 py-3 text-sm text-white/92 backdrop-blur">
-          <div className="text-[11px] uppercase tracking-[0.2em] text-white/60">Bandierine verdi</div>
-          <div className="mt-1 font-medium">Luoghi già visitati dagli sposi</div>
+          <div className="text-[11px] uppercase tracking-[0.2em] text-white/60">Linea colorata + Bandiere</div>
+          <div className="mt-1 font-medium">Tragitto conquistato con le miglia regalate</div>
         </div>
         <div className="rounded-[22px] border border-white/12 bg-slate-900/35 px-4 py-3 text-sm text-white/92 backdrop-blur">
-          <div className="text-[11px] uppercase tracking-[0.2em] text-white/60">Cerchi + bandiera</div>
-          <div className="mt-1 font-medium">Tappa numerata e nazione corrispondente</div>
+          <div className="text-[11px] uppercase tracking-[0.2em] text-white/60">Bandierine verdi</div>
+          <div className="mt-1 font-medium">Luoghi già visitati dagli sposi </div>
         </div>
       </div>
     </div>
